@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const InputTodo = () => {
+const InputTodo = ({ getTodos }) => {
   const [description, setDescription] = useState("");
   //   console.log(description);
 
@@ -14,6 +14,8 @@ const InputTodo = () => {
         body: JSON.stringify(body),
       });
       console.log(response);
+      getTodos();
+      setDescription("");
     } catch (err) {
       console.error(err.message);
     }

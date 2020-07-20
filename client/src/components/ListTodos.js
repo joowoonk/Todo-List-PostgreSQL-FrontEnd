@@ -1,14 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 
-const ListTodos = () => {
-  const [todos, setTodos] = useState([]);
-  async function getTodos() {
-    const res = await fetch("http://localhost:5000/todos");
-
-    const todoArray = await res.json();
-
-    setTodos(todoArray);
-  }
+const ListTodos = ({ getTodos, todos, setTodos }) => {
   console.table(todos);
   useEffect(() => {
     getTodos();
