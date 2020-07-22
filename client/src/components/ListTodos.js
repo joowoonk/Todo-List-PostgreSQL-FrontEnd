@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-
+import EditTodo from "./EditTodo";
 const ListTodos = ({ getTodos, todos, setTodos }) => {
   console.table(todos);
   useEffect(() => {
@@ -39,9 +39,7 @@ const ListTodos = ({ getTodos, todos, setTodos }) => {
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
               <td>
-                <button type="button" className="btn btn-info">
-                  Edit
-                </button>
+                <EditTodo todo={todo} getTodos={getTodos} />
               </td>
               <td>
                 <button
